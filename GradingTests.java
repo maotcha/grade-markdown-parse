@@ -9,13 +9,13 @@ import java.util.List;
 public class GradingTests {
     @Test
     public void testFile1() {
-        List<String> expect = List.of("");
-        assertEquals(MarkdownParse.getLinks("[]()"), expect);
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks(new String[]{"[]()"}), expect);
     }
     @Test
     public void testFile2() {
         List<String> expect = List.of();
-        assertEquals(MarkdownParse.getLinks("[]("), expect);
+        assertEquals(MarkdownParse.getLinks(new String[]{"[]("}), expect);
     }
 
 }
